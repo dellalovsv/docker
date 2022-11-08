@@ -9,5 +9,11 @@ docker build --no-cache --rm -t <name> <dir-from>
 
 ## Команда для запуска контейнера из образа:
 ```bash
+## --net bots: этот параметр отвечает в каком через бридж запускать контейнер
 docker run -d --net bots --rm --name <container name> <image name>
+```
+
+## Создать свой сетевой бридж
+```bash
+docker network create --gateway 192.168.90.1 --subnet 192.168.90.0/24 bots
 ```
